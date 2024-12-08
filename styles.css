@@ -1,0 +1,199 @@
+/* Futuristic CSS with Advanced Effects */
+:root {
+    --neon-blue: #0ff;
+    --neon-pink: #f0f;
+    --cyber-purple: #9d4edd;
+    --dark-bg: #0a0a0a;
+    --card-bg: rgba(16, 16, 24, 0.9);
+    --grid-size: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: radial-gradient(circle at center, #1a1a2e, #16213e, #0f0f0f);
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.cyber-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--dark-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+    animation: scan-line 3s linear infinite;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.cyber-glitch {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    text-shadow: 
+        2px 2px var(--neon-blue),
+        -2px -2px var(--neon-pink);
+}
+
+.year-container {
+    margin: 1rem 0;
+}
+
+.year {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* Resolutions Grid */
+.resolutions-grid {
+    display: grid;
+    grid-template-columns: var(--grid-size);
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.resolution-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.resolution-card::before {
+    content: attr(data-number);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    color: var(--neon-blue);
+    opacity: 0.5;
+}
+
+.resolution-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.2),
+        0 0 40px rgba(0, 255, 255, 0.1);
+    border-color: var(--neon-blue);
+}
+
+.resolution-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.resolution-card:hover::after {
+    left: 100%;
+}
+
+.card-content {
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.footer-content {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.cyber-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+    margin: 1rem 0;
+}
+
+/* Animations */
+@keyframes scan-line {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(1000%);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cyber-container {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .cyber-glitch {
+        font-size: 1.8rem;
+    }
+
+    .year {
+        font-size: 2.5rem;
+    }
+
+    .resolutions-grid {
+        grid-template-columns: 1fr;
+    }
+}
