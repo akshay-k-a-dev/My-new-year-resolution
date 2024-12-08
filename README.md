@@ -27,7 +27,7 @@ Copying this list will result in your 2025 resolutions being cursed to failure. 
 ---
 
 ## Special Announcement 📢
-**Don't forget to check out the [live page](#)**! By the end of the year, I will update it to mark which tasks were accomplished and which ones joined the procrastination hall of fame. Let’s see if the girlfriend mission finally succeeds this time.  
+**Don't forget to check out the [live page](https://akshay-k-a-dev.github.io/My-new-year-resolution/)**! By the end of the year, I will update it to mark which tasks were accomplished and which ones joined the procrastination hall of fame. Let’s see if the girlfriend mission finally succeeds this time.  
 
 ---
 
